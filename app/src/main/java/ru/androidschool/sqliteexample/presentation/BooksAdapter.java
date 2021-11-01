@@ -43,21 +43,21 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.BookViewHold
 
         private final TextView mAuthorView;
         private final TextView mTitleView;
-        private final TextView mUuidView;
+        private final TextView mIsbnView;
         private final TextView mShelfView;
 
         public BookViewHolder(@NonNull View itemView) {
             super(itemView);
             mAuthorView = itemView.findViewById(R.id.bookAuthor);
             mTitleView = itemView.findViewById(R.id.bookTitle);
-            mUuidView = itemView.findViewById(R.id.bookUuid);
+            mIsbnView = itemView.findViewById(R.id.bookIsbn);
             mShelfView = itemView.findViewById(R.id.bookShelf);
         }
 
         void bind(@NonNull Book book) {
             mAuthorView.setText(String.format(Locale.getDefault(), "%d:%s", book.bookId, book.author));
             mTitleView.setText(book.title);
-            mUuidView.setText(book.uuid);
+            mIsbnView.setText(book.isbn);
             mShelfView.setText(String.valueOf(book.shelfNumber));
         }
     }

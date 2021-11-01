@@ -6,16 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".presentation.MainActivity">
 
-    <Button
-        android:id="@+id/buttonInit"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/default_margin"
-        android:text="@string/init_data"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookList"
         android:layout_width="0dp"
@@ -25,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonInit"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:listitem="@layout/layout_book_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,6 @@ public class BooksInteractor {
     }
 
     public List<Book> getBooks() {
-        mRepository.initRepository();
         return mRepository.books();
     }
 }

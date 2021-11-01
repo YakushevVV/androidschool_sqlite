@@ -11,19 +11,16 @@ import ru.androidschool.sqliteexample.domain.BooksInteractor;
 
 class BooksViewModelFactory implements ViewModelProvider.Factory {
 
-    private final Context mContext;
+    private final Context mAppContext;
 
-    public BooksViewModelFactory(Context context) {
-        mContext = context;
+    public BooksViewModelFactory(@NonNull Context context) {
+        mAppContext = context.getApplicationContext();
     }
 
     @SuppressWarnings("unchecked")
     @NonNull
     @Override
     public <T extends ViewModel> T create(@NonNull Class<T> aClass) {
-        return (T) new MainViewModel(
-                new BooksInteractor(
-                        new BooksRepositoryImpl(
-                        )));
+        return (T) new MainViewModel(new BooksInteractor(new BooksRepositoryImpl()));
     }
 }
