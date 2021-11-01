@@ -17,11 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView listView = findViewById(R.id.bookList);
 
-        MainViewModel viewModel = new ViewModelProvider(
-                this, new BooksViewModelFactory(getApplicationContext())
-        ).get(MainViewModel.class);
-        viewModel.getBooksData().observe(this, books ->
-                listView.setAdapter(new BooksAdapter(books)));
+        MainViewModel viewModel = new ViewModelProvider(this, new BooksViewModelFactory(this))
+                .get(MainViewModel.class);
+        viewModel.getBooksData().observe(this, books -> listView.setAdapter(new BooksAdapter(books)));
     }
 
 }

@@ -1,0 +1,75 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "f9b334a5a772d136b9b4d2e4555b24c5",
+    "entities": [
+      {
+        "tableName": "books",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER PRIMARY KEY AUTOINCREMENT, `isbn` TEXT, `title` TEXT, `author` TEXT, `shelf_number` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isbn",
+            "columnName": "isbn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "author",
+            "columnName": "author",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "shelfNumber",
+            "columnName": "shelf_number",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "isbn",
+            "unique": true,
+            "columnNames": [
+              "isbn"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `isbn` ON `${TABLE_NAME}` (`isbn`)"
+          },
+          {
+            "name": "index_books_isbn",
+            "unique": false,
+            "columnNames": [
+              "isbn"
+            ],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_books_isbn` ON `${TABLE_NAME}` (`isbn`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f9b334a5a772d136b9b4d2e4555b24c5')"
+    ]
+  }
+}

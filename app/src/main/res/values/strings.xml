@@ -2,4 +2,5 @@
     <string name="app_name">SQLite Example</string>
     <string name="init_data">Init data</string>
     <string name="shelves">Полка:</string>
+    <string name="isbn_label">ISBN:</string>
 </resources>
