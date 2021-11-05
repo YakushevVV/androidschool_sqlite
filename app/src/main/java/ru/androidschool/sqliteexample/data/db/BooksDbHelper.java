@@ -22,7 +22,7 @@ public class BooksDbHelper extends SQLiteOpenHelper {
 
     private static final String DROP_TABLE_BOOKS = "DROP TABLE IF EXISTS " + BooksEntry.TABLE_NAME;
 
-    private static final String INIT_TABLE_BOOKS = "INSERT INTO " + BooksEntry.TABLE_NAME +
+    static final String INIT_TABLE_BOOKS = "INSERT INTO " + BooksEntry.TABLE_NAME +
             "(" + BooksEntry.ISBN + ", " + BooksEntry.TITLE + ", " + BooksEntry.AUTHOR + ", " + BooksEntry.SHELF_NUMBER + ") " +
             "VALUES " +
             "(\"978-1260440225\", \"Java: A Beginner's Guide\", \"Herbert Schildt\", 1), " +
